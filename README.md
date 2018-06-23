@@ -1,0 +1,2 @@
+# MineTest
+game,MineSweeper
