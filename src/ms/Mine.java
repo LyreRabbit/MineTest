@@ -1,27 +1,7 @@
 package ms;
-
-//import java.awt.BorderLayout;
-//import java.awt.GridLayout;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
-
-//import javax.swing.JDialog;
-//import javax.swing.JFrame;
-//import javax.swing.JLabel;
-//import javax.swing.JMenu;
-//import javax.swing.JMenuBar;
-//import javax.swing.JMenuItem;
-//import javax.swing.JPanel;
-//import javax.swing.JRadioButton;
-//import javax.swing.Timer;
 import javax.swing.*;
-
-
 import java.awt.*;
 import java.awt.event.*;
-
-
-
 /**
  * Mine类
  * Description：游戏主界面
@@ -91,7 +71,7 @@ public class Mine extends JFrame implements ActionListener
 		setVisible(true);//显示
 	}
 	
-	public Mine(int a,int b)
+	/*public Mine(int a,int b)
 	{
 		super("扫雷-MineSweeper");
 		Mine.row = a;
@@ -117,12 +97,12 @@ public class Mine extends JFrame implements ActionListener
 		addMine(a,b);//放雷
 		timeListen.start();//启动计时器
 		setVisible(true);//显示
-	}
+	}*/
 	
 	/********************************************************
                                                                          随机放雷
     ********************************************************/
-	public static void addMine(int a,int b)
+	public static String addMine(int a,int b)
 	{
 		for(int i=0; i<a*10/9; )
 		{
@@ -134,12 +114,13 @@ public class Mine extends JFrame implements ActionListener
 				i++;
 			}
 		}
+		return "success";
 	}
 	
 	/********************************************************
                                                                   初始化游戏面板
     ********************************************************/
-	void InitMine()
+  public String InitMine()
 	{
 		setBounds(700,300,330,440);//size
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//
@@ -196,7 +177,7 @@ public class Mine extends JFrame implements ActionListener
 				mine[i][j] =new	MyButton(i,j);
 			}
 		}
-		
+		return "success";
 	}
 
 	/********************************************************
